@@ -1,0 +1,167 @@
+.w {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.fl {
+    float: left;
+}
+
+.fl ul li {
+    font-size: 12px;
+    color: #666;
+}
+
+.red {
+    color: #c81623;
+}
+
+.fr {
+    float: right;
+}
+
+.shortcut {
+    width: 100%;
+    height: 30px;
+    background-color: #f1f1f1;
+    line-height: 30px;
+}
+
+.shortcut li {
+    float: left;
+}
+
+.fr ul li:nth-child(even) {
+    margin: 9px 15px 0;
+    width: 1px;
+    height: 12px;
+    background-color: #666;
+}
+
+
+.header {
+    position: relative;
+    height: 105px;
+    /* background-color: #c81623; */
+}
+
+.logo {
+    position: absolute;
+    top: 16px;
+    left: 0;
+    width: 171px;
+    height: 61px;
+    /* background-color: #c81623; */
+}
+
+
+.search {
+    position: absolute;
+    top: 28px;
+    left: 340px;
+    width: 538px;
+    height: 36px;
+    border: 2px solid #ff9666;
+}
+
+.search input {
+    float: left;
+    width: 454px;
+    height: 32px;
+    padding-left: 10px;
+}
+
+.search button {
+    float: left;
+    width: 80px;
+    height: 32px;
+    background-color: #ff9666;
+    color: #fff;
+}
+
+.hotword {
+    position: absolute;
+    top: 68px;
+    left: 342px;
+}
+.hotword a {
+    float: left;
+    margin: 0 10px;
+}
+
+.shopcar {
+    position: absolute;
+    top: 25px;
+    right: 65px;
+    width: 140px;
+    height: 35px;
+    border: 1px solid #dfdfdf;
+    background-color: #f7f7f7;
+    text-align: center;
+    line-height: 32px;
+    color: #666;
+    font-size: 12px;
+}
+
+.shopcar::before {
+    content: '';
+    margin-right: 5px;
+    font-family: 'icomoon';
+    color: #ff9666;    
+}
+
+.shopcar::after {
+    content: '';
+    margin-left: 15px;
+    font-family: 'icomoon';
+}
+
+footer {
+    height: 350px;
+    margin-top: 40px;
+    background-color: #f5f5f5;
+}
+
+.mod_help {
+    font-size: 12px;
+    height: 185px;
+    border-bottom: 1px solid #ccc;
+    padding-top: 20px;
+    padding-left: 50px;
+}
+
+.mod_help dl {
+    float: left;
+    width: 200px;
+    padding-bottom: 10px;
+}
+
+.mod_help dl:last-child {
+    width: 90px;
+    text-align: center;
+}
+
+.mod_help dl dt {
+    font-size: 16px; 
+    margin-bottom: 10px;
+}
+.mod_copyright {
+    text-align: center;
+    padding-top: 20px;
+}
+.links {
+    margin-bottom: 15px;
+}
+.links a {
+    margin: 0 3px;
+}
+.copyright {
+    line-height: 20px;
+}
+
+.line
+{
+    height: 1px;
+    width: 100%;
+    border-bottom: 3px solid #ff9666;
+}

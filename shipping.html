@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shipping</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/same.css">
+    <link rel="stylesheet" href="css/cart.css">
+    <script src="js/cookiemanager.js" ></script>
+    <script src="js/validation.js"></script>
+    <script src="js/catalog.js" ></script>
+    <script>
+        function shipping()
+       {
+	      var select=document.getElementById("ship");
+	      var index=select.selectedIndex;
+	      var value=select.options[index].value;
+	      let x=new ShoppingCart(getCookie('whoami'));
+	      var str="&nbsp:&nbsp$"+x.addShipping(parseFloat(value));
+          if(isNaN(x.addShipping(parseFloat(value)))==true)
+	      {
+		
+		     document.getElementById("shiptotal").innerHTML="";
+	      }
+	      else
+	      {
+		      document.getElementById("shiptotal").innerHTML=str;
+	      }
+       }
+        function createCart()
+        { 
+          var flag2=false;
+          var total=0;
+          var str="<table>";
+          str+="<tr style='text-align:center'><th>NAME</th><th>QUANTITY</th><th>PRICE</th><th>SUBTOTAL</th>";
+          let x=new ShoppingCart(getCookie('whoami'));
+          let items=x.getItemsOrdered();
+          for(let i=0;i<items.length;i++)
+          {
+              let qty=items[i].getNumItems();	
+              if(qty !=null)
+              {	
+                  var name=items[i].getItemCode()+"qty";
+                  var image=items[i].getItemImage();
+                  
+                  str+="<tr>";
+                  str+="<td style='text-align:center'>"+"<img width='100px' src='images/"+image+"' />"+items[i].getItemName()+"</td>";
+                  //str+="<td style='text-align:left'>"+items[i].getItemName()+"</td>";
+			      str+="<td style='text-align:center'>"+"<input id='"+name+"'type='text' value='"+qty+"' />"+
+			      "<input id='"+items[i].getItemCode()+"' type='button' value='update' onclick='update(this.id);' style = 'margin: 4px;'/>"+
+                "<input id='"+items[i].getItemCode()+"' type='button' value='clear'onclick=delete2('"+items[i].getItemCode()+"') /></td>";
+                  str+="<td style='text-align:center'>$"+items[i].getUnitCost()+"</td>";
+                  str+="<td>$"+items[i].getTotalCost()+"</td>";
+                  str+="</tr>";
+                  flag2=true;
+              }		
+          }
+          str+="</table>";
+          str+="<div class = 'cost'>"
+          str+="<div><span>TOTAL BEFORE TAX: &nbsp</span><span>$"+x.getTotalCost()+"</span></div>";
+	      str+="<div><span>TOTAL After TAX: &nbsp</span><span>$"+x.addTax()+"</span></div>";
+	
+	     str+="<div><span> COST WITH SHIPPING:&nbsp";
+	     str+="<select id='ship'  onchange='shipping();' >";
+	     str+="<option value=''></option>";
+	     str+="<option value='0'>Regular-$0</option>";
+	     str+="<option value='15'>Express-$15</option>";
+	     str+="<option value='20'>Next Day-$20</option>";
+	     str+="</select></span>";
+	     str+="<span id='shiptotal' style='text-align:right'></span>";
+	     str+="</div>";
+         str+="</div>"
+	     document.getElementById("info").innerHTML=str;
+        }
+        </script>
+</head>
+<body onload="createCart();">
+    <section class="shortcut">
+        <div class="w">
+           <div class="fl">
+            <ul>
+                <li>Weclome to ShopNow&nbsp;&nbsp;</li>
+                <li>
+                    <a href="register.html" class="red">Free Register</a>
+                </li>
+            </ul>
+           </div>
+           <div class="fr">
+            <ul>
+                <li><a href="logoff.html">Log Out</a></li>
+                <li></li>
+                <li><a href="about.html">About Our Team</a></li>
+                <li></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+           </div>
+        </div>
+    </section>
+
+    <header class="header w">
+        <!-- logo SEO优化 -->
+        <div class="logo">
+            <h1>
+                <a href="home.html" title="ShopNow.com"><img src="images/logo2.png" alt=""></a>
+            </h1>
+        </div>
+
+        <div class="search">
+            <input type="search"><button>Search</button>
+        </div>
+
+        <div class="hotword">
+            <a href="#" class="red">Discount</a>
+            <a href="#">Buy 1 drink Get 1 50%</a>
+            <a href="#">PS5</a>
+            <a href="#">Iphone 14 Pro Max</a>
+            <a href="#">Book</a>
+        </div>
+        <a href="cart.html" class="shopcar">ShopCar</a>
+    </header>
+
+    <div class="line"></div>
+
+    <div id="content" class="contentSection w"> 
+
+        <div id="info"></div>
+        <a href="thankyou.html" class="btn">Place Order Next</a>
+        </div>
+    
+    <footer>
+            <div class="w">
+    
+                <div class="mod_help">
+                    <dl>
+                        <dt>Shopping guide</dt>
+                        <dd><a href="#">Shopping process</a></dd>
+                        <dd><a href="#">Member introduction</a></dd>
+                        <dd><a href="#">Group buying</a></dd>
+                        <dd><a href="#">Travel</a></dd>
+                        <dd><a href="#">Common Question</a></dd>
+                        <dd><a href="#">Contact Customer Service</a></dd>
+                    </dl>
+    
+                    <dl>
+                        <dt>Delivery Method</dt>
+                        <dd><a href="#">Pick Up</a></dd>
+                        <dd><a href="#">Fastest delivery</a></dd>
+                        <dd><a href="#">Search My package</a></dd>
+                        <dd><a href="#">Shipping fee</a></dd>
+                        <dd><a href="#">Global delivery</a></dd>
+                    </dl>
+    
+                    <dl>
+                        <dt>Payment method</dt>
+                        <dd><a href="#">Cash on delivery</a></dd>
+                        <dd><a href="#">Credit Card</a></dd>
+                        <dd><a href="#">Zelle</a></dd>
+                        <dd><a href="#">Paypal</a></dd>
+                        <dd><a href="#">Check</a></dd>
+                    </dl>
+    
+                    <dl>
+                        <dt>After-sales service</dt>
+                        <dd><a href="#">After-sale policy</a></dd>
+                        <dd><a href="#">Refund instructions</a></dd>
+                        <dd><a href="#">Return</a></dd>
+                        <dd><a href="#">cancel order</a></dd>
+                    </dl>
+    
+                    <dl>
+                        <dt>Special service</dt>
+                        <dd><a href="#">Gym discount</a></dd>
+                        <dd><a href="#">Student discount</a></dd>
+                        <dd><a href="#">Seniors Discount</a></dd>
+                    </dl>
+    
+                    <dl>
+                        
+                        <dt>Our App</dt>
+                    </dl>
+                </div>
+                <div class="mod_copyright">
+                    <div class="links">
+                            <a href="about.html">About Us</a>  |  <a href="contact.html">Contact us</a>  |  <a href="#">Customer Service</a>  |  <a href="#">Merchants enter</a>  |   <a href="#">Download APP</a>  |  <a href="#">Community</a> 
+                    </div>
+                    <div class="copyright">
+                            Address: 245 Greenwich St, New York, NY 10007 
+                    </div>
+            </div>
+            
+    </footer>
+</body>
+</html>

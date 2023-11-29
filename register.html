@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <!-- 引入favicon图标 -->
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/register.css">
+    <script src="js/cookiemanager.js" ></script>
+    <script>
+        function registration()
+        {
+           username=document.getElementById("username").value;
+           password=document.getElementById("password").value;
+           password2=document.getElementById("password2").value;
+           if (username == "")
+           {alert("Please enter your username!")}
+           else if (password == "")
+           {alert("Please enter your password!")}
+           else if (password2 == "")
+           {alert("Please confirm your password!")}
+           else if(getCookie(username) != null )
+           {
+                  alert("Username already taken..");
+           }
+           else if(password==password2)
+           {
+              setCookie(username,password,30);
+              alert("Thank you for your registration..");
+              location.href="login.html"
+           }
+           else {
+              alert("Passwords do not match");
+           }
+           //alert(username+":"+password+":"+password2);
+        }
+     </script>
+</head>
+<body>
+    <div class="w">
+        <header>
+            <div class="logo">
+                <img src="images/logo2.png" alt="">
+            </div>
+        </header>
+        <div class="area">
+            <h3>
+                Register New Account
+                <div class="login">
+                    I have account
+                    <a href="login.html">Login</a>
+                </div>
+            </h3>
+            <div class="reg-form">
+                <form action="">
+                    <ul>
+                        <li>
+                            <label >UserName </label> 
+                            <input type="text" id="username">
+                        </li>
+                        <li>
+                            <label >PassWord </label> 
+                            <input type="text" id="password">
+                        </li>
+                        <li>
+                            <label >Confirm PassWord </label> 
+                            <input type="text"id="password2">
+                        </li>
+                    </ul>
+                    <input type="button" value="Register" class="btn" onclick="registration();">
+                </form>
+            </div>
+        </div>
+        <footer>
+            <div class="w">
+                <div class="mod_copyright">
+                    <div class="links">
+                            <a href="about.html">About Us</a>  |  <a href="contact.html">Contact us</a>  |  <a href="#">Customer Service</a>  |  <a href="#">Merchants enter</a>  |   <a href="#">Download APP</a>  |  <a href="#">Community</a> 
+                    </div>
+                    <div class="copyright">
+                            Address: 245 Greenwich St, New York, NY 10007 
+                    </div>
+            </div>
+            
+        </footer>
+    </div>
+</body>
+</html>

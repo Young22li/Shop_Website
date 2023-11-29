@@ -1,0 +1,143 @@
+
+.nav {
+    height: 47px;
+    border-bottom: 2px solid #ff9666;
+}
+
+.nav .dropdown {
+    float: left;
+    width: 210px;
+    height: 45px;
+    background-color: #ff9666;
+}
+
+.nav .navitems {
+    float: left;
+}
+
+.dropdown .dt {
+    width: 100%;
+    height: 100%;
+    background-color: #ec733b;
+    color: #fff;
+    font-size: 16px;
+    line-height: 45px;
+    text-align: center;
+}
+
+
+.dropdown .dd {
+    /* display: none; */
+    width: 210px;
+    height: 465px;
+    background-color: #ff9666;
+    margin-top: 2px;
+}
+
+
+.dropdown ul li {
+    position: relative;
+    width: 100%;
+    height: 31px;
+    line-height: 31px;
+    margin-left: 2px;
+    padding-left: 10px;
+}
+
+.dropdown ul li a {
+    font-size: 14px;
+    color:#fff;
+}
+
+.dropdown ul li:hover {
+    background-color: #fff;
+}
+
+.dropdown ul li:hover a {
+    color: #ff9666;
+}
+
+.dropdown ul li::after {
+    position: absolute;
+    top: 1px;
+    right: 10px;
+    content: '';
+    font-family: 'icomoon';
+    color: #fff;
+}
+
+.navitems ul li {
+    float: left;
+}
+
+.navitems ul li a {
+    display: block;
+    padding: 0 20px;
+    height: 45px;
+    line-height: 45px;
+    font-size: 16px;
+
+}
+
+.main {
+    margin: 10px 0 20px 220px;
+    width: 980px;
+    height: 455px;
+    /* background-color: pink; */
+}
+
+.focus {
+    float: left;
+    width: 721px;
+    height: 455px;
+
+}
+
+.news {
+    float: right;
+    width: 250px;
+    height: 455px;
+    border: #dfdfdf 1px solid;
+}
+
+.hd {
+    padding: 0 15px;
+    height: 33px;
+    border-bottom: 1px dotted #e4e4e4;
+    line-height: 33px;
+}
+
+.hd h3 {
+    float: left;
+    font-size: 16px;
+    font-weight: 600px;
+    line-height: 32px;
+}
+
+.more {
+    float: right;
+}
+
+.bd ul li {
+    margin-left: 10px;
+    height: 60px;
+    line-height: 24px;
+    /* 超出部分省略号 */
+    overflow: hidden;
+    /* 一行显示 */
+    white-space: nowrap;
+    /* 省略号 */
+    text-overflow: ellipsis;
+
+}
+
+.bd ul li a {
+    font-size: 14px;
+}
+
+.more::after {
+    content: '';
+    font-family: 'icomoon';
+}
+
+

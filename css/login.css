@@ -1,0 +1,66 @@
+        body{        /* position: relative; */
+          background-color: rgb(51, 49, 122);
+        }
+
+        .abc {
+            position: absolute;
+            /* 1. left 走 50%  父容器宽度的一半 */
+            left: 50%;
+            /* 2. margin 负值 往左边走 自己盒子宽度的一半 */
+            margin-left: -300px;
+            top: 50%;
+            margin-top: -150px;
+             background-color: rgb(163, 205, 241);
+             width: 600px;
+             height: 300px;
+             border-radius: 10px;
+        }
+
+        .hd {
+            text-align: center;
+            font-size: large;
+            font-weight: 900;
+            margin-bottom: 5px;
+            line-height: 70px;
+        }
+
+        .bd {
+            background-color: rgb(226, 210, 210);
+        }
+
+        .bd ul li{
+            font-size: large;
+            padding-left: 170px;
+            padding-bottom: 10px;
+        }
+
+        .in {
+              width: 300px;
+              height: 30px;
+              border-radius: 5px;
+        }
+
+        input[type = "button"] {
+            position: absolute;
+            left: 42%;
+            bottom: 10px;
+            border-radius: 5px;
+            width: 90px;
+            height: 50px;
+            color: black;
+            transition: all 0.2s;
+            font-size: 20px;
+        }
+
+        input[type = "button"]:hover {
+            background-color: rgb(7, 50, 99);
+            color: rgb(201, 217, 218);
+        }
+
+        span {
+            margin-top: 5px;
+            font-size: 14px;
+        }
+        span a {
+            color: red;
+        }

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login in Page</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/login.css">
+    <script src="js/cookiemanager.js" ></script>
+	<script>
+
+       window.onload = function()
+       {
+        function login1()
+	   {
+		username=document.getElementById("username").value;
+		password=document.getElementById("password").value;
+		pass=getCookie(username);
+
+		if (pass == null) alert("User Does not Exit");
+		else
+		{
+			if(pass == password)
+			{
+				setCookie("flag","true",30);
+				setCookie("whoami",username,30);
+				location.href="home.html";
+			}
+			else alert("password is incorrect");
+		}
+	   }
+        var login = document.getElementById("login");
+        login.onclick = function()
+        {
+            login1();
+        }
+       }
+	</script>
+</head>
+<body>
+    <div class="abc">
+        <div class="hd"><h3>Login in</h3></div>
+        <div class="bd">
+            <ul>
+                <li>UserName: </li>
+                <li><input type="text" class="in" id="username"></li>
+                <li>PassWord: </li>
+                <li><input type="password" class="in" id="password"></li>
+            </ul>
+        </div>
+        <input type="button" value="Login" id="login" > <span> Don't have account? <a href="register.html">Sign in</a></span>
+
+    </div>
+</body>
+</html>
